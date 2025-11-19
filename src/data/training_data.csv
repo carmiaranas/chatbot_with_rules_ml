@@ -1,0 +1,13 @@
+text,intent
+"hi","greet"
+"hello","greet"
+"hey there","greet"
+"goodbye","goodbye"
+"bye","goodbye"
+"see you later","goodbye"
+"what is your name","ask_bot_name"
+"who are you","ask_bot_name"
+"i need help with my account","account_help"
+"i forgot my password","account_help"
+"my payment failed","billing_issue"
+"i was charged twice","billing_issue"

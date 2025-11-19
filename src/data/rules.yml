@@ -1,0 +1,32 @@
+rules:
+  - name: high_priority_billing
+    description: If user mentions refund explicitly, route to billing_issue regardless of ML intent.
+    conditions:
+      contains_any:
+        - "refund"
+        - "money back"
+    action:
+      type: set_intent
+      intent: "billing_issue"
+
+  - name: smalltalk_greet
+    description: Pure rule-based greeting on obvious patterns.
+    conditions:
+      contains_any:
+        - "hi"
+        - "hello"
+        - "hey"
+    action:
+      type: reply
+      response: "Hello! How can I help you today?"
+
+  - name: goodbye
+    description: Simple goodbye rule.
+    conditions:
+      contains_any:
+        - "bye"
+        - "goodbye"
+        - "see you"
+    action:
+      type: reply
+      response: "Goodbye! Talk to you soon."

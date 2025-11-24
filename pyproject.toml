@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=65", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chatbot-with-rules-ml"
+version = "0.1.0"
+description = "A hybrid chatbot that combines rule-based logic and ML-based intent classification."
+authors = [
+  { name = "Your Name", email = "you@example.com" }
+]
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+
+dependencies = [
+  "scikit-learn>=1.4.0",
+  "numpy>=1.26.0",
+  "pandas>=2.2.0",
+  "pyyaml>=6.0.0"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0.0",
+]
+
+[project.scripts]
+chatbot-cli = "src.main:main"
+
+[tool.setuptools]
+package-dir = { "" = "." }
+# We treat 'src' as a top-level package
+packages = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
